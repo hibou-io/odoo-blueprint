@@ -4,3 +4,6 @@
 [submodule "src/odoo"]
 	path = src/odoo
 	url = https://github.com/hibou-io/odoo.git
+[submodule "src/enterprise"]
+	path = src/enterprise
+	url = https://github.com/hibou-io/enterprise.git
