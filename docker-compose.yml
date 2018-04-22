@@ -15,7 +15,7 @@ services:
   odoo:
     depends_on:
       - db
-    image: hibou/odoo:11.0
+    image: hibou/odoo:10.0
     networks:
       - backend
       - frontend
