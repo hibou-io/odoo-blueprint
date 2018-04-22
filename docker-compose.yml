@@ -23,6 +23,7 @@ services:
       - "./var/conf/odoo:/etc/odoo"
       - "./var/data/odoo:/var/lib/odoo"
       - "./src:/opt/odoo"
+      - "./src/odoo/odoo:/usr/local/lib/python2.7/site-packages/odoo"
 
   nginx:
     depends_on:
