@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    environment:
+      - POSTGRES_PASSWORD=some_better_pass_for_first_launch
+    ports:
+      - "127.0.0.1:5432:5432"
+
+  odoo:
+    volumes:
+      - "./src/odoo/odoo:/usr/local/lib/python3.6/site-packages/odoo"
+
+  nginx:
+    ports:
+      - "80:80"
+      - "443:443"

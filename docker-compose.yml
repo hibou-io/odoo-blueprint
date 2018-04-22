@@ -1,0 +1,39 @@
+version: '2'
+services:
+
+  db:
+    environment:
+      - POSTGRES_PASSWORD=odoo_db_pass
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    image: postgres:9.6
+    networks:
+      - backend
+    volumes:
+      - "./var/data/postgres/9.6/pgdata:/var/lib/postgresql/data/pgdata"
+
+  odoo:
+    depends_on:
+      - db
+    image: hibou/odoo:11.0
+    networks:
+      - backend
+      - frontend
+    volumes:
+      - "./var/conf/odoo:/etc/odoo"
+      - "./var/data/odoo:/var/lib/odoo"
+      - "./src:/opt/odoo"
+
+  nginx:
+    depends_on:
+      - odoo
+    image: nginx:1.13
+    networks:
+      - frontend
+    volumes:
+      - "./var/conf/nginx/:/etc/nginx:ro"
+
+
+networks:
+  backend:
+  frontend:

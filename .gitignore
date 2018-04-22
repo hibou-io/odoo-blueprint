@@ -1,0 +1,9 @@
+var/conf/nginx/conf.d/*.conf
+var/conf/odoo/*.conf
+var/conf/odoo/*.ini
+var/data/postgres/*
+var/data/odoo/*
+docker-compose.override.yml
+*.pyc
+.idea
+sdk/odoo/
