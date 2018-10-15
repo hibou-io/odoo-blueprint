@@ -1,3 +1,6 @@
 [submodule "src/hibou-suite"]
 	path = src/hibou-suite
 	url = https://github.com/hibou-io/hibou-odoo-suite.git
+[submodule "src/odoo"]
+	path = src/odoo
+	url = https://github.com/hibou-io/odoo.git
