@@ -6,16 +6,16 @@ services:
       - POSTGRES_PASSWORD=odoo_db_pass
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
-    image: postgres:9.6
+    image: postgres:10
     networks:
       - backend
     volumes:
-      - "./var/data/postgres/9.6/pgdata:/var/lib/postgresql/data/pgdata"
+      - "./var/data/postgres/10/pgdata:/var/lib/postgresql/data/pgdata"
 
   odoo:
     depends_on:
       - db
-    image: hibou/odoo:11.0
+    image: hibou/odoo:12.0
     networks:
       - backend
       - frontend
